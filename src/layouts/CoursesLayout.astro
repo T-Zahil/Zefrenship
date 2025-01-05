@@ -1,0 +1,420 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import SubscribeTwo from "@/components/ctas/SubscribeTwo.astro";
+const { frontmatter } = Astro.props;
+import Video from "@/components/courses/Video.astro";
+---
+
+<BaseLayout>
+  <section>
+    <div
+      class="relative px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12">
+        <div>
+          <div class="flex-shrink-0">
+            <div class="max-w-2xl">
+              <div class="flex flex-row gap-3 items-center text-left mt-12">
+                <div>
+                  <img
+                    class="inline-block w-16 border h-16 rounded-full shrink-0"
+                    src={frontmatter.avatar.url}
+                    alt={frontmatter.avatar.alt}
+                  />
+                </div>
+                <div>
+                  <p class="text-sm font-display text-blue-950">
+                    {frontmatter.teacher}
+                  </p>
+                  <p class="text-slate-600">{frontmatter.role}</p>
+                </div>
+              </div>
+              <p
+                class="text-4xl font-semibold font-display text-blue-950 mt-12">
+                {frontmatter.courseTitle}
+              </p>
+              <p class="text-slate-600 mt-4 max-w-sm">
+                {frontmatter.intro}
+              </p>
+              <div class="mt-8 flex flex-col md:flex-row gap-2">
+                <a
+                  aria-label="Buy this course"
+                  title="Buy this course"
+                  href={frontmatter.puchaseLink}
+                  class="items-center inline-flex w-full focus:outline-disc bg-green-500 duration-500 focus:ring-2 focus:ring-green-600 focus:ring-offset-2 font-medium h-12 hover:bg-green-600 justify-center px-6 py-1 gap-3 rounded-full text-white text-center text-sm md:w-auto"
+                  >Buy course
+                  <span>{frontmatter.price}</span></a
+                >
+                <a
+                  aria-label="Enroll in this course"
+                  title="Enroll in this course"
+                  href={frontmatter.enrollLink}
+                  class="items-center inline-flex w-full focus:outline-disc bg-green-50 duration-200 focus:ring-2 focus:ring-green-60 focus:ring-offset-2 font-medium h-12 hover:bg-green-100 gap-3 justify-center px-6 py-1 rounded-full text-green-600 text-center text-sm md:w-auto"
+                  >Enroll <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-circle-chevron-right"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.25"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    ></path>
+                    <path d="M11 9l3 3l-3 3"></path>
+                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0z"></path>
+                  </svg></a
+                >
+              </div>
+              <ol
+                role="list"
+                class="mt-8 divide-y divide-slate-300/30 rounded-2xl bg-slate-50 px-6 py-3 text-base tracking-tight sm:px-8 sm:py-7">
+                <li class="flex justify-between py-3">
+                  <span
+                    class="font-medium text-blue-950"
+                    aria-hidden="true"
+                    >Level</span
+                  ><span
+                    class="font-display text-slate-600"
+                    aria-hidden="true"
+                    >{frontmatter.level}</span
+                  >
+                </li><li class="flex justify-between py-3">
+                  <span
+                    class="font-medium text-blue-950"
+                    aria-hidden="true"
+                    >Duration</span
+                  ><span
+                    class="font-display text-slate-600"
+                    aria-hidden="true"
+                    >10h 45m
+                  </span>
+                </li><li
+                  class="flex justify-between py-3"
+                  aria-label="Setting up your first artboard on page 20">
+                  <span
+                    class="font-medium text-blue-950"
+                    aria-hidden="true"
+                    >Videos</span
+                  ><span
+                    class="font-display text-slate-600"
+                    aria-hidden="true"
+                    >{frontmatter.videos}</span
+                  >
+                </li>
+                <li
+                  class="flex justify-between py-3"
+                  aria-label="Setting up your first artboard on page 20">
+                  <span
+                    class="font-medium text-blue-950"
+                    aria-hidden="true"
+                    >Files</span
+                  ><span
+                    class="font-display text-slate-600"
+                    aria-hidden="true"
+                    >{frontmatter.files}</span
+                  >
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <Video />
+      </div>
+      <div>
+        <ul
+          class=""
+          role="list">
+          <div class="mt-12 prose-styles">
+            <slot />
+          </div>
+        </ul>
+        <ul
+          class=""
+          role="list">
+          <div class="mt-12">
+            <h3 class="text-blue-950 text-xl lg:text-2xl font-display">
+              Customer Reviews
+            </h3>
+
+            <div class="fles flex-col max-w-xl gap-2">
+              <div class="flex flex-col text-sm">
+                <div class="flex-none py-10">
+                  <img
+                    src="/avatars/head6.svg"
+                    alt=""
+                    class="h-16 p-2 w-16 rounded-full"
+                  />
+                </div>
+                <div>
+                  <h3 class="text-lg font-display text-blue-950 lg:text-xl">
+                    Sarah Martinez
+                  </h3>
+                  <p>
+                    <time datetime="2023-08-16">August 16, 2023</time>
+                  </p>
+
+                  <div class="mt-4 flex items-center">
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      x-state:on="Active"
+                      x-state:off="Default"
+                      x-state-description='Active: "text-blue-950", Default: "text-slate-500"'
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+
+                  <div class="mt-4">
+                    <p class="text-sm text-slate-500">
+                      "As a marketing professional, I was seeking a course that
+                      would help me understand the nuances of brand identity
+                      design. This course exceeded my expectations! The content
+                      is structured beautifully, and the real-world case studies
+                      provided practical insights. I now feel confident in
+                      crafting visually appealing and strategically aligned
+                      brand identities. Highly recommended!"
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col text-sm">
+                <div class="flex-none py-10">
+                  <img
+                    src="/avatars/head2.svg"
+                    alt=""
+                    class="h-16 p-2 w-16 rounded-full"
+                  />
+                </div>
+                <div class="">
+                  <h3 class="text-lg font-display text-blue-950 lg:text-xl">
+                    John Anderson
+                  </h3>
+                  <p>
+                    <time datetime="2023-08-12">August 12, 2023</time>
+                  </p>
+
+                  <div class="mt-4 flex items-center">
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      x-state:on="Active"
+                      x-state:off="Default"
+                      x-state-description='Active: "text-blue-950", Default: "text-slate-500"'
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+
+                  <div class="mt-4">
+                    <p class="text-sm text-slate-500">
+                      "I'm an entrepreneur with a small business, and this
+                      course was a game-changer for me. The lessons on color
+                      psychology and typography alone were worth it. The
+                      instructor's explanations are clear, and the hands-on
+                      exercises helped me apply what I learned. My brand's
+                      visual identity has improved drastically, thanks to this
+                      course."
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col text-sm">
+                <div class="flex-none py-10">
+                  <img
+                    src="/avatars/head4.svg"
+                    alt=""
+                    class="h-16 p-2 w-16 rounded-full"
+                  />
+                </div>
+                <div class="">
+                  <h3 class="text-lg font-display text-blue-950 lg:text-xl">
+                    Emily Carter
+                  </h3>
+                  <p><time datetime="2023-08-06">August 6, 2023</time></p>
+
+                  <div class="mt-4 flex items-center">
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      x-state:on="Active"
+                      x-state:off="Default"
+                      x-state-description='Active: "text-blue-950", Default: "text-slate-500"'
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="text-yellow-500 h-5 w-5 flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="text-yellow-200 h-5 w-5 flex-shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+
+                  <div class="mt-4">
+                    <p class="text-sm text-slate-500">
+                      "I've always been intrigued by design, but I'm not a
+                      designer by trade. This course made brand identity design
+                      accessible and enjoyable. The course materials are
+                      well-organized, and the assignments were engaging. I loved
+                      learning how to create a cohesive brand voice and design
+                      elements. This course has inspired me to explore design
+                      further!"
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <SubscribeTwo /></BaseLayout
+>

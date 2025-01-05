@@ -1,0 +1,78 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout>
+  <section>
+    <div
+      class="relative px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex flex-row gap-3 items-center text-left mt-12">
+          <div>
+            <img
+              class="inline-block w-16 border h-16 rounded-full shrink-0"
+              src={frontmatter.avatar.url}
+              alt={frontmatter.avatar.alt}
+            />
+          </div>
+          <div>
+            <p class="text-sm font-display text-blue-950">
+              {frontmatter.name}
+            </p>
+            <p class="text-slate-600">{frontmatter.role}</p>
+          </div>
+        </div>
+        <div class="prose-styles mx-auto mt-12">
+          <slot />
+        </div>
+        <div class="mt-12">
+          <p class="text-lg font-display text-blue-950 lg:text-xl">Skills</p>
+          <ul
+            class="list-none text-slate-500 gap-2 justify-center mt-4 grid grid-cols-1 md:grid-cols-2">
+            {
+              frontmatter.skills.map((skill) => (
+                <li class="inline-flex items-center gap-2">⏤ {skill}</li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="mt-12">
+          <p class="text-lg font-display text-blue-950 lg:text-xl">Courses</p>
+          <ul
+            class="grid grid-cols-1 mt-12 list-none md:grid-cols-2 gap-2 relative p-2 rounded-3xl bg-gradient-to-t from-white/20"
+            role="list">
+            {
+              frontmatter.courses.map((course) => (
+                <li class="bg-green-50 p-8 rounded-3xl flex flex-col text-center h-full justify-between">
+                  <div>
+                    <div class="flex flex-col items-center gap-4 w-full">
+                      <div class="flex flex-col items-center gap-4">
+                        <p class="text-blue-950 text-xl font-display">
+                          {course.price}
+                        </p>
+                        <p class="text-lg font-display text-green-500 lg:text-xl text-balance">
+                          {course.title}
+                        </p>
+                      </div>
+                      <p class="mt-4 text-sm text-green-900 text-balance">
+                        {course.description}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex mt-4 justify-center">
+                    <a
+                      href={course.url}
+                      class="items-center inline-flex w-full focus:outline-disc bg-green-50 duration-200 focus:ring-2 focus:ring-green-60 focus:ring-offset-2 font-medium lg:w-auto h-8 hover:bg-green-100 justify-center px-6 py-1 rounded-full text-green-600  text-xs">
+                      Enroll Now &nbsp; →
+                    </a>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

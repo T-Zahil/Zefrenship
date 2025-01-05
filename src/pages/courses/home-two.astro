@@ -1,0 +1,68 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("courses");
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import EntriesTwo from "@/components/courses/EntriesTwo.astro";
+import FeatureFour from "@/components/features/FeatureFour.astro";
+import SubscribeOne from "@/components/ctas/SubscribeOne.astro";
+---
+
+<BaseLayout>
+  <section>
+    <div
+      class="relative px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="text-center max-w-xl mx-auto">
+        <h1
+          class="text-4xl font-semibold font-display text-blue-950 sm:text-6xl text-balance">
+          Explore our diverse course offerings
+        </h1>
+        <p class="text-balance  mt-4 text-slate-500">
+          Embark on a learning journey tailored to your interests and goals
+        </p>
+        <div class="flex flex-wrap items-center justify-center mt-8">
+          <div>
+            <label
+              for="search"
+              class="sr-only"
+              >Quick search</label
+            >
+            <div class="relative flex items-center">
+              <input
+                class="w-full h-10 px-4 py-2 placeholder-slate-300 duration-200 ring-1 ring-inset border-transparent ring-white/10 rounded-lg appearance-none bg-slate-50 focus:border-slate-300 focus:outline-none focus:ring-slate-300 duration-500 sm:text-sm text-blue-950 block pr-14"
+                id="search"
+                name="search"
+                type="text"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+              <div class="flex absolute inset-y-0 pr-1.5 py-1.5 right-0">
+                <kbd
+                  class="items-center inline-flex border-slate-200 font-sans px-0.5 rounded text-blue-950 text-xs"
+                  >⌘K</kbd
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul
+        class="grid grid-cols-1 relative md:grid-cols-2 mt-12 list-none gap-2 p-2 rounded-3xl bg-gradient-to-t from-white/20"
+        role="list">
+        {
+          allPosts.slice().map((post) => (
+            <EntriesTwo
+              url={"/courses/" + post.slug}
+              courseTtitle={post.data.courseTitle}
+              intro={post.data.intro}
+              price={post.data.price}
+              level={post.data.level}
+            />
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+  <FeatureFour />
+  <SubscribeOne />
+</BaseLayout>

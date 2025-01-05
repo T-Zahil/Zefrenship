@@ -1,0 +1,36 @@
+---
+const { name, url, description, avatar, role, intro } = Astro.props;
+---
+
+<li class="flex flex-col h-full justify-between">
+  <div>
+    <div class="flex flex-col text-center items-center gap-4 w-full">
+      <div class="rounded-full border">
+        <img
+          class="inline-block w-12 h-12 mx-auto shrink-0"
+          src={avatar}
+          alt={description}
+        />
+      </div>
+      <div>
+        <p class="text-lg font-display text-blue-950 lg:text-xl">
+          {name}
+        </p>
+        <p class="text-xs font-display text-slate-500">
+          {role}
+        </p>
+      </div>
+    </div>
+    <p class="mt-8 text-sm text-blue-950 text-center">
+      {intro}
+    </p>
+  </div>
+  <div class="inline-flex mt-8 justify-center items-center gap-4 w-full">
+    <a
+      href={url}
+      class="items-center inline-flex w-full focus:outline-disc bg-green-500 duration-500 focus:ring-2 focus:ring-green-600 focus:ring-offset-2 font-medium h-12 hover:bg-green-600 justify-center px-6 py-1 rounded-full text-white text-center text-sm lg:w-auto">
+      View {name} profile
+    </a>
+    <div></div>
+  </div>
+</li>

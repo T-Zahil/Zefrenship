@@ -1,0 +1,127 @@
+---
+const sections = [
+  {
+    title: "Overview",
+    categories: [
+      {
+        categoryName: "Landing Pages",
+        links: [
+          { name: "Landing One", url: "/landings/one" },
+          { name: "Landing Two", url: "/landings/two" },
+          { name: "Landing Three", url: "/landings/three" },
+          { name: "About", url: "/infopages/about" },
+          { name: "FAQ", url: "/infopages/faq" },
+          { name: "404", url: "/404" },
+        ],
+      },
+      {
+        categoryName: "Forms",
+        links: [
+          { name: "Contact", url: "/forms/contact" },
+          { name: "Sign In", url: "/forms/signin" },
+          { name: "Sign Up", url: "/forms/signup" },
+          { name: "Password", url: "/forms/password" },
+          { name: "Coming Soon", url: "/forms/coming-soon" },
+        ],
+      },
+      {
+        categoryName: "Pricing",
+        links: [
+          { name: "Pricing Simple", url: "/pricing/pricing-simple" },
+          { name: "Pricing Tiers", url: "/pricing/pricing-tiers" },
+        ],
+      },
+      {
+        categoryName: "System Pages",
+        links: [{ name: "Style Guide", url: "/system/styleguide" }],
+      },
+    ],
+  },
+  {
+    title: "Content Collections",
+    categories: [
+      {
+        categoryName: "Courses",
+        links: [
+          { name: " Home One", url: "/courses/home-one" },
+          { name: " Home Two", url: "/courses/home-two" },
+          { name: " Home Three", url: "/courses/home-three" },
+          { name: " Details", url: "/courses/1" },
+          { name: "Purchased Course", url: "/courses/purchased-course" },
+        ],
+      },
+      {
+        categoryName: "Teachers",
+        links: [
+          { name: "Teachers", url: "/teachers/home" },
+          { name: "Teacher Details", url: "/teachers/1" },
+        ],
+      },
+      {
+        categoryName: "Events",
+        links: [
+          { name: "Home", url: "/events/home" },
+          { name: "Details", url: "/events/1" },
+        ],
+      },
+      {
+        categoryName: "Utility Pages",
+        links: [
+          { name: "Terms of Use", url: "/infopages/terms" },
+          { name: "Privacy Policy", url: "/infopages/privacy" },
+          { name: "DPA", url: "/infopages/dpa" },
+          { name: "Cookies", url: "/infopages/cookies" },
+        ],
+      },
+      {
+        categoryName: "Blog",
+        links: [
+          { name: "Blog Home One", url: "/blog/blog-one" },
+          { name: "Blog Post", url: "/posts/1" },
+          { name: "Tag Index", url: "/tags" },
+          { name: "Tag Category", url: "/tags/category" },
+          { name: "RSS", url: "/rss.xml" },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<section>
+  {
+    sections.map((section) => (
+      <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-24">
+        <h1 class="text-4xl  font-semibold font-display text-blue-950 lg:text-8xl">
+          {section.title}
+        </h1>
+        <ol
+          role="list"
+          class="grid grid-cols-1 gap-10 mt-16 md:grid-cols-4">
+          {section.categories.map((category) => (
+            <li>
+              <p class="text-xl font-normal tracking-tight text-blue-950 font-display lg:text-3xl">
+                {category.categoryName}
+              </p>
+              <ol
+                role="list"
+                class="mt-4 space-y-1 tracking-tight">
+                {category.links.map((link) => (
+                  <li>
+                    <a
+                      href={link.url}
+                      class="text-base text-slate-600 hover:text-blue-950"
+                      title={`Link to ${link.name}`}
+                      aria-label={link.name}>
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </li>
+          ))}
+        </ol>
+      </div>
+    ))
+  }
+</section>

@@ -1,0 +1,80 @@
+---
+const cookieCategories = [
+  {
+    title: "Necessary",
+    description:
+      "Necessary cookies are required for this website to function and cannot be disabled.",
+    backgroundColor: "bg-green-100",
+    textColor: "text-blue-950",
+    slateColor: "text-slate-500",
+  },
+  {
+    title: "Functional",
+    description:
+      "Functional cookies enable this website to provide enhanced functionality and personalization.",
+    backgroundColor: "bg-green-100",
+    textColor: "text-blue-950",
+    slateColor: "text-slate-500",
+  },
+  {
+    title: "Analytics",
+    description:
+      "Analytics cookies are used to understand how visitors interact with our website, such as by counting visits to pages and identifying sources of traffic.",
+    backgroundColor: "bg-green-100",
+    textColor: "text-blue-950",
+    slateColor: "text-slate-500",
+  },
+  {
+    title: "Marketing and Advertising",
+    description:
+      "Marketing cookies help to deliver advertising that's more relevant to you. They may also be used to limit the number of times you see an advertisement and measure the effectiveness of advertising campaigns.",
+    backgroundColor: "bg-green-100",
+    textColor: "text-blue-950",
+    slateColor: "text-slate-500",
+  },
+];
+---
+
+<section>
+  <div class="relative px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+    <div class="p-2 rounded-3xl bg-gradient-to-t from-white/20">
+      <h2 class="text-4xl font-semibold font-display text-blue-950 sm:text-6xl">
+        Customize Consent Preferences
+      </h2>
+
+      <p class="max-w-xl mt-4 text-slate-500">
+        We use first-party and third-party cookies to provide a better
+        experience, tailor and measure ads, analyze traffic, and personalize
+        content. See Section 4 of our
+        <a
+          href="/infopages/privacy"
+          class="text-blue-950 underline duration-200 hover:text-slate-500">
+          Privacy Policy</a
+        > to learn more.
+      </p>
+     <div class="flex flex-col gap-2 mt-12 lg:mt-24">
+  {cookieCategories.map((category) => (
+    <div class={`${category.backgroundColor} rounded-3xl p-4 lg:p-8 flex items-center justify-between`}>
+      <span class="flex flex-col flex-grow">
+        <span class={`text-lg lg:text-4xl ${category.textColor} font-display`}>{category.title}</span>
+        <span class={`mt-2 text-sm ${category.slateColor}`}>{category.description}</span>
+      </span>
+
+      <div x-data="{ value: false }" class="flex items-center justify-center">
+        <input type="hidden" name="sendNotifications" :value="value" />
+
+        <label @click="$refs.toggle.click(); $refs.toggle.focus()" class="sr-only">
+          Toggle
+        </label>
+
+        <button x-ref="toggle" @click="value = ! value" type="button" role="switch" :aria-checked="value" class="relative inline-flex py-1 ml-4 transition rounded-full w-14" :class="value ? 'bg-green-950' : 'bg-green-800'">
+          <span :class="value ? 'translate-x-7' : 'translate-x-1'" class="w-6 h-6 transition bg-white rounded-full shadow-md" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  ))}
+</div>
+
+    </div>
+  </div>
+</section>

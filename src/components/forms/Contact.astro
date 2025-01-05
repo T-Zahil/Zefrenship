@@ -1,0 +1,114 @@
+<section>
+  <div
+    class="relative flex justify-center max-h-full overflow-hidden lg:px-0 md:px-12"
+  >
+    <div
+      class="relative z-10 flex flex-col items-center lg:border-l border-slate-200 flex-1 px-8 py-32 bg-white lg:py-16 md:flex-none md:px-28 sm:justify-center"
+    >
+      <div class="w-full mx-auto lg:max-w-sm md:px-0 lg:w-96 sm:px-4">
+        <div class="flex flex-col">
+          <div>
+            <h2
+              class="text-3xl font-normal tracking-tight text-blue-950 font-display"
+            >
+              Let's get started!
+            </h2>
+            <p class="mt-2 text-sm text-slate-600">
+              Complete the details below so I can process your request and then
+              schedule a time to discuss your goals.
+            </p>
+          </div>
+        </div>
+        <form>
+          <div class="mt-4 space-y-6">
+            <div>
+              <label
+                for="name"
+                class="block mb-3 text-sm font-medium text-blue-950"
+                >First name</label
+              >
+              <input
+                required
+                id="name"
+                name="name"
+                placeholder="Your name"
+                class="block w-full h-10 px-4 py-3 text-blue-950 bg-slate-100 border rounded-lg appearance-none border-none placeholder-slate-400 focus:bg-slate-50 focus:outline-none focus:ring-green-500 sm:text-sm"
+              />
+            </div>
+            <div class="col-span-full">
+              <label
+                for="company"
+                class="block mb-3 text-sm font-medium text-blue-950"
+                >What is the name of your company / organisation?</label
+              >
+              <input
+                required
+                id="company"
+                name="company"
+                placeholder="Company name"
+                class="block w-full h-10 px-4 py-3 text-blue-950 bg-slate-100 border rounded-lg appearance-none border-none placeholder-slate-400 focus:bg-slate-50 focus:outline-none focus:ring-green-500 sm:text-sm"
+              />
+            </div>
+            <div class="col-span-full">
+              <label
+                for="email"
+                class="block mb-3 text-sm font-medium text-blue-950"
+                >How shall we contact you?</label
+              >
+              <input
+                required
+                id="email"
+                type="email"
+                name="email"
+                autocomplete="off"
+                placeholder="email@example.com"
+                class="block w-full h-10 px-4 py-3 text-blue-950 bg-slate-100 border rounded-lg appearance-none border-none placeholder-slate-400 focus:bg-slate-50 focus:outline-none focus:ring-green-500 sm:text-sm"
+              />
+            </div>
+            <div>
+              <label
+                for="message"
+                class="block mb-3 text-sm font-medium text-blue-950"
+                >Project details</label
+              >
+              <textarea
+                required
+                rows="4"
+                id="message"
+                name="message"
+                placeholder="What are you working on?"
+                class="block w-full px-4 py-3 text-blue-950 bg-slate-100 border rounded-lg appearance-none border-none placeholder-slate-400 focus:bg-slate-50 focus:outline-none focus:ring-green-500 sm:text-sm"
+              ></textarea>
+            </div>
+            <div class="col-span-full">
+              <button
+                class="items-center inline-flex w-full focus:outline-disc bg-green-500 duration-500 focus:ring-2 focus:ring-green-600 focus:ring-offset-2 font-medium h-12 hover:bg-green-600 justify-center px-6 py-1 rounded-full text-white text-center text-sm"
+                type="submit"
+              >
+                Submit your request
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div
+      class="hidden h-screen lg:block lg:flex-1 lg:relative md:contents lg:order-first bg-blue-500"
+    >
+      <div
+        class="absolute inset-0 object-cover w-full p-8 pr-0 h-full"
+        alt=""
+        height="1866"
+        width="1664"
+      >
+        <img
+          class="object-cover object-left w-full h-full bg-top bg-slate-100 rounded-3xl rounded-r-none"
+          src="/dashboard.svg"
+          alt=""
+          width="1310"
+          height="873"
+        />
+      </div>
+    </div>
+  </div>
+</section>

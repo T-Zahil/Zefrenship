@@ -1,0 +1,41 @@
+---
+const { courseTtitle, url, intro, avatar, price } = Astro.props;
+---
+
+<div>
+  <div
+    class="bg-blue-50 p-8 rounded-3xl shadow shadow-blue-500/20 h-full justify-between relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform lg:w-80 lg:-ml-16 lg:hover:-translate-x-16 lg:hover:-translate-y-8">
+    <div>
+      <div class="flex flex-col items-center gap-4 w-full">
+        <img
+          class="inline-block size-24 rounded-full shrink-0"
+          src={avatar}
+          alt={intro}
+        />
+
+        <div
+          class="lg:inline-flex text-center items-center gap-4 justify-center">
+          <p class="text-lg font-display text-blue-500 lg:text-xl">
+            {courseTtitle}
+          </p>
+          <p class="text-blue-950 text-xl font-display">
+            {price}
+          </p>
+        </div>
+        <p class="mt-4 text-sm text-blue-900 text-center">
+          {intro}
+        </p>
+      </div>
+    </div>
+    <div
+      class="flex flex-col mt-4 justify-between items-center gap-4 w-full pt-2">
+      <div>
+        <a
+          href={url}
+          class="items-center inline-flex w-full focus:outline-disc bg-blue-50 duration-200 focus:ring-2 focus:ring-blue-60 focus:ring-offset-2 font-medium lg:w-auto h-8 hover:bg-blue-100 justify-center px-6 py-1 rounded-full text-blue-600 text-center text-xs">
+          Enroll Now &nbsp; &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

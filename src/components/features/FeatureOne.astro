@@ -1,0 +1,61 @@
+---
+const features = [
+  {
+    imgSrc: "/widget6.svg",
+    title: "Anytime, anywhere access",
+    description:
+      "Enjoy the flexibility of learning on your schedule, accessing courses and resources seamlessly across devices.",
+  },
+  {
+    imgSrc: "/widget4.svg",
+    title: "Personalized learning paths",
+    description:
+      "Embark on a tailored educational journey, with courses curated to match your interests, goals, and learning pace.",
+  },
+  {
+    imgSrc: "/widget8.svg",
+    title: "Progress tracking",
+    description:
+      "Monitor your learning milestones and accomplishments, motivating you to stay on track and celebrate your achievements.",
+  },
+];
+---
+
+<section>
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl">
+    <div class="w-1/2 mx-auto lg:text-center">
+      <p class="text-4xl font-semibold font-display text-blue-950 text-baöance">
+        Empowering learning experiences
+      </p>
+      <p class="text-slate-600 text-base mt-4 text-balance">
+        Discover the features that make our platform your ultimate learning
+        companion
+      </p>
+    </div>
+    <ul
+      class="grid grid-cols-1 gap-12 lg:text-center mt-12 list-none md:grid-cols-3 items-end"
+      role="list">
+      {
+        features.map((feature) => (
+          <li class="flex flex-col">
+            <div>
+              <img
+                class="w-full bg-slate-100 rounded-3xl"
+                src={feature.imgSrc}
+                alt=""
+              />
+            </div>
+            <div>
+              <p class="text-lg mt-8 font-display text-blue-950 lg:text-xl">
+                {feature.title}
+              </p>
+              <p class="mt-2 text-sm text-slate-500 text-balance">
+                {feature.description}
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

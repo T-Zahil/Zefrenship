@@ -1,0 +1,79 @@
+---
+const testimonials = [
+  {
+    avatar: "/avatars/head1.svg",
+    grade: "Digital Marketing",
+    course: "Digital Marketing",
+    student: "Roberta Johnson",
+    feedback:
+      "I'm amazed by the quality of courses offered on this platform. The instructors are experts in their fields, and the interactive learning approach keeps me engaged. I've gained skills I can immediately apply to my career",
+  },
+  {
+    avatar: "/avatars/head2.svg",
+    grade: "Digital Marketing",
+    course: "Data Science",
+    student: "Emilio Pirelli",
+    feedback:
+      "As a full-time professional, I needed flexible learning options. This platform exceeded my expectations. The self-paced courses and diverse subjects let me customize my learning journey. I've gained new skills that helped me stand out in my industry.",
+  },
+  {
+    avatar: "/avatars/head3.svg",
+    grade: "Digital Marketing",
+    course: "Creative Writing",
+    student: "Fina Como",
+    feedback:
+      "The community here is incredible. From insightful discussions to peer feedback, I feel supported every step of the way. The certifications I earned have boosted my resume, and I've found a platform that truly values my growth.",
+  },
+];
+---
+
+<section class="relative overflow-hidden">
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-4xl font-semibold font-display text-blue-950 lg:text-6xl">
+        A skill building <span class="lg:block">journey with Enlightr</span>
+      </p>
+      <p class="text-slate-600 text-base mt-4 max-w-sm mx-auto">
+        Read how Enlightr helped master news skills
+      </p>
+    </div>
+
+    <ol
+      role="list"
+      class="grid grid-cols-1 gap-y-12 gap-x-2 mt-12 text-center md:grid-cols-2 lg:grid-cols-3 lg:mt-24">
+      {
+        testimonials.slice(0, 3).map((template) => (
+          <>
+            <li>
+              <div class="flex flex-col justify-between h-full relative">
+                <div class="flex-shrink-0 block order-last mt-8">
+                  <div class="flex flex-row gap-3 items-center text-left justify-center">
+                    <div>
+                      <img
+                        class="inline-block w-16 border h-16  rounded-full  shrink-0"
+                        src={template.avatar}
+                        alt={template.feedback}
+                      />
+                    </div>
+                    <div>
+                      <p class="text-sm font-display text-blue-950">
+                        {template.student}
+                      </p>
+                      <p class="   text-slate-500">{template.grade}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-8 bg-blue-50 h-full flex flex-col  items-center rounded-3xl ">
+                  <div class="h-6 w-6 bg-blue-50 rounded bottom-[5.3rem] left-[6.5rem] lg:left-[5.5rem] rotate-45 absolute" />
+                  <p class=" text-bnase text-pretty font-display text-blue-900 ">
+                    "{template.feedback}"
+                  </p>
+                </div>
+              </div>
+            </li>
+          </>
+        ))
+      }
+    </ol>
+  </div>
+</section>

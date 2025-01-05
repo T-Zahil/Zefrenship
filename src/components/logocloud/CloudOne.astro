@@ -1,0 +1,64 @@
+---
+const logos = [
+  {
+    url: "/brands/1.svg",
+  },
+  {
+    url: "/brands/2.svg",
+  },
+  {
+    url: "/brands/3.svg",
+  },
+  {
+    url: "/brands/4.svg",
+  },
+  {
+    url: "/brands/5.svg",
+  },
+  {
+    url: "/brands/6.svg",
+  },
+  {
+    url: "/brands/7.svg",
+  },
+  {
+    url: "/brands/8.svg",
+  },
+  {
+    url: "/brands/9.svg",
+  },
+  {
+    url: "/brands/10.svg",
+  },
+  {
+    url: "/brands/11.svg",
+  },
+  {
+    url: "/brands/12.svg",
+  },
+];
+---
+
+<section class="overflow-hidden relative bg-black">
+  <div class="2xl:max-7xl mx-auto py-4 overflow-hidden bg-green-50">
+    <div class="mx-auto">
+      <div class="overflow-x-hidden relative">
+        <div class="animate-marquee whitespace-nowrap gap-4 flex">
+          {
+            logos.map((logo) => (
+              <>
+
+                <img
+                  class="h-8"
+                  src={logo.url}
+                  alt=""
+                />
+              </>
+            ))
+          }
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

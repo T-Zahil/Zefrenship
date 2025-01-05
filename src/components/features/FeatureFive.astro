@@ -1,0 +1,171 @@
+---
+const features = [
+  {
+    title: "Personalized learning paths",
+    description:
+      "Embark on a tailored educational journey, with courses curated to match your interests, goals, and learning pace.",
+    icon: "route",
+    backgroundColor: "bg-blue-100",
+    iconColor: "text-blue-500",
+  },
+  {
+    title: "Interactive discussions",
+    description:
+      "Engage in vibrant discussions with fellow learners and educators, fostering a collaborative learning environment.",
+    icon: "milkshake",
+    backgroundColor: "bg-yellow-100",
+    iconColor: "text-yellow-500",
+  },
+  {
+    title: "Rich multimedia content",
+    description:
+      "Dive into a variety of learning materials, from video lectures to interactive quizzes, ensuring an engaging experience.",
+    icon: "box-padding",
+    backgroundColor: "bg-pink-100",
+    iconColor: "text-pink-500",
+  },
+  {
+    title: "Anytime, anywhere access",
+    description:
+      "Enjoy the flexibility of learning on your schedule, accessing courses and resources seamlessly across devices.",
+    icon: "current-location-off",
+    backgroundColor: "bg-green-100",
+    iconColor: "text-green-500",
+  },
+  // Add more features as needed
+];
+---
+
+<section>
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+    <div class="max-w-xl mx-auto lg:text-center">
+      <p class="text-4xl font-semibold font-display text-blue-950 text-balance">
+        Empowering learning experiences all day everyday
+      </p>
+      <p class="text-slate-600 text-base mt-4 max-w-sm lg:mx-auto text-balance">
+        Discover the features that make our platform your ultimate learning
+        companion
+      </p>
+    </div>
+    <ul
+      class="grid grid-cols-1 gap-2 mt-12 list-none md:grid-cols-2 lg:grid-cols-4 mx-auto p-2"
+      role="list">
+      {
+        features.map((feature) => (
+          <li class={`p-8 rounded-3xl ${feature.backgroundColor} h-full`}>
+            <div
+              class={`rounded-full bg-white h-10 w-10 items-center inline-flex ${feature.iconColor} mx-auto justify-center`}>
+              {/* Conditionally render icons based on the feature's icon identifier */}
+              {feature.icon === "route" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-route"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    stroke="none"
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M18 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M12 19h4.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h3.5" />
+                </svg>
+              )}
+              {feature.icon === "milkshake" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-milkshake"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.25"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    stroke="none"
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path d="M17 10a5 5 0 0 0 -10 0" />
+                  <path d="M6 10m0 1a1 1 0 0 1 1 -1h10a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z" />
+                  <path d="M7 13l1.81 7.243a1 1 0 0 0 .97 .757h4.44a1 1 0 0 0 .97 -.757l1.81 -7.243" />
+                  <path d="M12 5v-2" />
+                </svg>
+              )}
+              {feature.icon === "box-padding" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-box-padding"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.25"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    stroke="none"
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+                  <path d="M8 16v.01" />
+                  <path d="M8 12v.01" />
+                  <path d="M8 8v.01" />
+                  <path d="M16 16v.01" />
+                  <path d="M16 12v.01" />
+                  <path d="M16 8v.01" />
+                  <path d="M12 8v.01" />
+                  <path d="M12 16v.01" />
+                </svg>
+              )}
+              {feature.icon === "current-location-off" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-current-location-off"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.25"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    stroke="none"
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path d="M14.685 10.661c-.3 -.6 -.795 -1.086 -1.402 -1.374m-3.397 .584a3 3 0 1 0 4.24 4.245" />
+                  <path d="M6.357 6.33a8 8 0 1 0 11.301 11.326m1.642 -2.378a8 8 0 0 0 -10.597 -10.569" />
+                  <path d="M12 2v2" />
+                  <path d="M12 20v2" />
+                  <path d="M20 12h2" />
+                  <path d="M2 12h2" />
+                  <path d="M3 3l18 18" />
+                </svg>
+              )}
+              {/* Add more conditions for different icons as needed */}
+            </div>
+            <p class="text-lg mt-12 font-display text-blue-900 lg:text-3xl">
+              {feature.title}
+            </p>
+            <p class="mt-2 text-base text-slate-600">{feature.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+
+
+  </div>
+</section>

@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("courses");
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import EntriesOne from "@/components/courses/EntriesOne.astro";
+import FeatureTwo from "@/components/features/FeatureTwo.astro";
+import SubscribeOne from "@/components/ctas/SubscribeOne.astro";
+---
+
+<BaseLayout>
+  <section>
+    <div
+      class="relative px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="max-w-2xl">
+        <div class="text-left">
+          <h1
+            class="text-4xl font-semibold font-display text-blue-950 sm:text-6xl">
+            Explore our diverse <span class="lg:block">course offerings</span>
+          </h1>
+          <p class="mt-4 text-slate-600 text-base max-w-2xl">
+            Embark on a learning journey tailored to your interests and goals
+          </p>
+        </div>
+      </div>
+      <ul
+        class="grid grid-cols-1 mt-12 list-none md:grid-cols-2 lg:grid-cols-3 gap-2 lg:mt-24 relative p-2 rounded-3xl bg-gradient-to-t from-white/20"
+        role="list">
+        {
+          allPosts.slice().map((post) => (
+            <EntriesOne
+              url={"/courses/" + post.slug}
+              courseTtitle={post.data.courseTitle}
+              intro={post.data.intro}
+              price={post.data.price}
+              avatar={post.data.avatar.url}
+            />
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+  <FeatureTwo />
+  <SubscribeOne />
+</BaseLayout>

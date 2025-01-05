@@ -1,0 +1,101 @@
+<section>
+  <div
+    class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24 h-svh flex flex-col items-center justify-center"
+  >
+    <div
+      class="flex items-center justify-center px-8 md:flex-none md:px-28 sm:justify-center"
+    >
+      <div class="w-full max-w-md mx-auto md:max-w-sm md:px-0 sm:px-4">
+        <div class="flex flex-col text-center">
+          <p
+            class="text-3xl font-normal tracking-tight text-blue-950 font-display"
+          >
+            Sign in to Enlightr
+          </p>
+        </div>
+        <form class="mt-12">
+          <div class="space-y-12">
+            <div class="space-y-2">
+              <div>
+                <label for="name" class="sr-only">First name</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Your name"
+                  class="block w-full h-10 px-4 py-3 text-blue-950 bg-slate-100 border rounded-lg appearance-none border-none placeholder-slate-400 focus:bg-slate-50 focus:outline-none focus:ring-green-500 sm:text-sm"
+                />
+              </div>
+              <div class="col-span-full">
+                <label for="password" class="sr-only">Password</label>
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="Type password here..."
+                  class="block w-full h-10 px-4 py-3 text-blue-950 bg-slate-100 border rounded-lg appearance-none border-none placeholder-slate-400 focus:bg-slate-50 focus:outline-none focus:ring-green-500 sm:text-sm"
+                />
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <input
+                  id="remember-me"
+                  type="checkbox"
+                  class="w-4 h-4 text-green-500 bg-white rounded border-slate-300 focus:ring-white focus:border-white"
+                />
+                <label for="remember-me" class="ml-2 text-xs text-blue-950"
+                  >Remember me</label
+                >
+              </div><div class="text-xs">
+                <a class="text-blue-950 hover:text-slate-500" href="#"
+                  >Forgot your password?</a
+                >
+              </div>
+            </div>
+            <div class="col-span-full flex flex-col gap-2">
+              <button
+                class="items-center inline-flex w-full bg-green-500 duration-500 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 font-medium h-12 hover:bg-green-600 justify-center px-6 py-1 rounded-full text-white text-center text-sm"
+                type="submit"
+              >
+                Sign in
+              </button>
+              <span class="relative z-0 inline-flex w-full"
+                ><button
+                  class="flex items-center justify-center w-full h-10 px-4 py-2 text-sm font-semibold text-blue-950 transition-all border rounded-full bg-slate-50 hover:text-slate-400 border-slate-200"
+                  type="button"
+                  ><span>Log in with</span>
+                  <span class="order-first mr-3"
+                    ><svg
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 32 32"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      ><path
+                        d="M30.0014 16.3109C30.0014 15.1598 29.9061 14.3198 29.6998 13.4487H16.2871V18.6442H24.1601C24.0014 19.9354 23.1442 21.8798 21.2394 23.1864L21.2127 23.3604L25.4536 26.58L25.7474 26.6087C28.4458 24.1665 30.0014 20.5731 30.0014 16.3109Z"
+                        fill="#4285F4"></path><path
+                        d="M16.2862 30C20.1433 30 23.3814 28.7555 25.7465 26.6089L21.2386 23.1865C20.0322 24.011 18.4132 24.5866 16.2862 24.5866C12.5085 24.5866 9.30219 22.1444 8.15923 18.7688L7.9917 18.7827L3.58202 22.1272L3.52435 22.2843C5.87353 26.8577 10.6989 30 16.2862 30Z"
+                        fill="#34A853"></path><path
+                        d="M8.16007 18.7688C7.85848 17.8977 7.68395 16.9643 7.68395 15.9999C7.68395 15.0354 7.85849 14.1021 8.1442 13.231L8.13621 13.0455L3.67126 9.64734L3.52518 9.71544C2.55696 11.6132 2.0014 13.7444 2.0014 15.9999C2.0014 18.2555 2.55696 20.3865 3.52518 22.2843L8.16007 18.7688Z"
+                        fill="#FBBC05"></path><path
+                        d="M16.2863 7.4133C18.9688 7.4133 20.7783 8.54885 21.8101 9.4978L25.8418 5.64C23.3657 3.38445 20.1434 2 16.2863 2C10.699 2 5.87354 5.1422 3.52435 9.71549L8.14339 13.2311C9.30223 9.85555 12.5086 7.4133 16.2863 7.4133Z"
+                        fill="#EB4335"></path>
+                    </svg>
+                  </span>
+                </button>
+              </span>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <p class="mx-auto text-sm leading-tight text-center text-slate-600">
+              Not a have a password?
+            </p>
+            <a
+              class="items-center inline-flex w-full focus:outline-disc bg-green-50 duration-200 focus:ring-2 focus:ring-green-60 focus:ring-offset-2 font-medium mt-4 h-12 hover:bg-green-100 gap-3 justify-center px-6 py-1 rounded-full text-green-600 text-center text-sm"
+              href="/signup">Sign up now</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

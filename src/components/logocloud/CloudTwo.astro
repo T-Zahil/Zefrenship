@@ -1,0 +1,47 @@
+---
+const logos = [
+  {
+    url: "/brands/7.svg",
+  },{
+    url: "/brands/8.svg",
+  },
+  {
+    url: "/brands/9.svg",
+  },
+  {
+    url: "/brands/10.svg",
+  },
+    {
+    url: "/brands/11.svg",
+  },
+  {
+    url: "/brands/12.svg",
+  },
+];
+---
+
+<section>
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl">
+    <div class="mx-auto hidden w-full flex-col gap-4 md:flex">
+      <div
+        class="mx-auto grid grid-cols-2 items-center sm:grid-cols-3 lg:grid-cols-6">
+        {
+          logos.map((logo) => (
+            <>
+
+              <div class="flex h-24 items-center justify-center px-4">
+                <img
+                  class="h-12"
+                  src={logo.url}
+                  alt=""
+                />
+              </div>
+            </>
+          ))
+        }
+
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,98 @@
+---
+const pricingOptions = [
+  {
+    plan: "Basic",
+    price: "$29",
+    description: "For individuals",
+    features: [
+      "Access to Free Course Content",
+      "No Certificate",
+      "1 Month Access to Materials",
+      "Forum Support",
+    ],
+    bgColor: "bg-blue-100",
+    textColor: "text-blue-950",
+    buttonBgColor: "bg-blue-50",
+    buttonText: "Get started",
+    buttonTextColor: "text-blue-600",
+    buttonHoverBgColor: "bg-blue-100",
+  },
+  {
+    plan: "Pro",
+    price: "$99",
+    description: "For medium-sized businesses",
+    features: [
+      "Full Access to Course Content",
+      "Certificate upon Completion",
+      "Lifetime Access to Materials",
+      "Email Support",
+    ],
+    bgColor: "bg-green-100",
+    textColor: "text-green-950",
+    buttonBgColor: "bg-green-500",
+    buttonText: "Get started",
+    buttonTextColor: "text-white",
+    buttonHoverBgColor: "bg-green-600",
+  },
+  {
+    plan: "Business",
+    price: "$129",
+    description: "For medium companies",
+    features: [
+      "Full Access to Course Content",
+      "Certificate upon Completion",
+      "Lifetime Access to Materials",
+      "Priority Email Support",
+    ],
+    bgColor: "bg-yellow-100",
+    textColor: "text-yellow-950",
+    buttonBgColor: "bg-yellow-50",
+    buttonText: "Get started",
+    buttonTextColor: "text-yellow-600",
+    buttonHoverBgColor: "bg-yellow-100",
+  },
+];
+---
+
+<section>
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-24">
+    <div class="text-center">
+      <h1 class="text-4xl font-semibold font-display text-blue-950 lg:text-6xl text-balance ">
+        Gain clarity in pricing with transparent and predictable costs
+      </h1>
+      <p class="text-slate-600 text-base mt-4 w-1/2 lg:mx-auto text-balance">
+        Find the optimal plan tailored to you and your team. Begin with a modest
+        approach, scale up as your requirements grow.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-2 mt-12 lg:grid-cols-3">
+  {pricingOptions.map((option) => (
+    <div class={`h-full p-8 ${option.bgColor} rounded-3xl`}>
+      <div class={`flex flex-col w-full gap-8 text-3xl ${option.textColor} font-display`}>
+        <span class="text-2xl lg:text-9xl order-last">{option.price}</span>
+        <span>{option.plan}</span>
+      </div>
+      <p class="mt-8 text-xl font-display ${option.textColor}">{option.description}</p>
+      <ul role="list" class={`flex flex-col order-last mt-8 text-sm ${option.textColor} gap-y-3`}>
+        {option.features.map((feature) => (
+          <li class="flex items-center gap-3">
+            <!-- SVG icon can be replaced with a dynamic import if needed -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+              <path d="M9 12l2 2l4 -4"></path>
+            </svg>
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+      <div class="mt-8">
+        <a class={`items-center inline-flex w-full focus:outline-disc ${option.buttonBgColor} duration-200 focus:ring-2 focus:ring-green-60 focus:ring-offset-2 font-medium h-12 hover:${option.buttonHoverBgColor} gap-3 justify-center px-6 py-1 rounded-full ${option.buttonTextColor} text-center text-sm`} aria-label={option.plan + " tier"} href="/register">{option.buttonText}</a>
+      </div>
+    </div>
+  ))}
+</div>
+
+
+  </div>
+</section>

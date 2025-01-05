@@ -1,0 +1,36 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <section>
+    <div
+      class="relative px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="text-left sm:text-center">
+        <p
+          class="text-4xl font-semibold font-display text-blue-950 sm:text-9xl">
+          Oops! Error 404 <span class="lg:block">Page Not Found</span>
+        </p>
+        <p class="max-w-md mx-auto mt-4 text-slate-500">
+          The page you're looking for might have been moved, deleted, or never
+          existed in the first place. Double-check the URL or return to the
+          homepage to continue exploring.
+        </p>
+
+        <div
+          class="flex flex-col max-w-xl mx-auto justify-center gap-2 mt-12 sm:flex-row relative">
+          <a
+            href="https://buy.polar.sh/polar_cl_6UyhEnvG2ysaBiPi7GzTx6qgLB8Z8nw-EC1CBpAoPlo"
+            class="items-center inline-flex w-full focus:outline-disc bg-green-500 duration-500 focus:ring-2 focus:ring-green-600 focus:ring-offset-2 font-medium lg:w-auto h-12 hover:bg-green-600 justify-center px-6 py-1 rounded-full text-white text-center text-sm"
+            >Buy Enlightr</a
+          >
+          <a
+            href="/"
+            class="items-center inline-flex w-full focus:outline-disc bg-green-50 duration-200 focus:ring-2 focus:ring-green-60 focus:ring-offset-2 font-medium lg:w-auto h-12 hover:bg-green-100 gap-3 justify-center px-6 py-1 rounded-full text-green-600 text-center text-sm"
+            >See all pages</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

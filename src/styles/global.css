@@ -1,0 +1,243 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@plugin "tailwind-scrollbar-hide";
+@layer components {
+
+.prose-styles {
+  @apply prose prose-blockquote:border-l-white prose-a:text-slate-500 hover:prose-a:text-blue-950 prose-headings:font-normal prose-headings:text-blue-950 prose-li:marker:text-slate-500 text-slate-500 prose-code:text-blue-950 prose-blockquote:text-blue-950/70 max-w-3xl  prose-headings:font-display prose-pre:ring-1 prose-pre:ring-white/10  prose-strong:text-blue-950;
+}
+
+@font-face {
+  font-family: 'Recoleta';
+  src: local('Recoleta Regular'),
+       url('/fonts/Recoleta-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Recoleta';
+  src: local('Recoleta Medium'),
+       url('/fonts/Recoleta-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Recoleta';
+  src: local('Recoleta SemiBold'),
+       url('/fonts/Recoleta-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Recoleta';
+  src: local('Recoleta Bold'),
+       url('/fonts/Recoleta-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+}
+@theme {
+/* Typography*/
+--font-sans: "Inter", sans-serif;
+  --font-display: "Recoleta", sans-serif;
+  --font-mono: "Azaret Mono", monospace;
+  /* Colors */
+  /* Green Shades */
+  --color-green-50: hsl(120, 29%, 97%);
+  --color-green-100: hsl(120, 32%, 93%);
+  --color-green-200: hsl(120, 29%, 85%);
+  --color-green-300: hsl(118, 27%, 73%);
+  --color-green-400: hsl(120, 24%, 58%);
+  --color-green-500: hsl(120, 25%, 49%);
+  --color-green-600: hsl(120, 26%, 36%);
+  --color-green-700: hsl(120, 25%, 29%);
+  --color-green-800: hsl(120, 22%, 24%);
+  --color-green-900: hsl(123, 22%, 20%);
+  --color-green-950: hsl(120, 29%, 10%);
+
+  /* Pink Shades */
+  --color-pink-50: hsl(324, 33%, 97%);
+  --color-pink-100: hsl(322, 41%, 95%);
+  --color-pink-200: hsl(322, 42%, 90%);
+  --color-pink-300: hsl(322, 42%, 78%);
+  --color-pink-400: hsl(323, 42%, 70%);
+  --color-pink-500: hsl(324, 40%, 60%);
+  --color-pink-600: hsl(328, 35%, 51%);
+  --color-pink-700: hsl(329, 37%, 42%);
+  --color-pink-800: hsl(330, 37%, 35%);
+  --color-pink-900: hsl(331, 34%, 30%);
+  --color-pink-950: hsl(331, 40%, 17%);
+
+  /* Yellow Shades */
+  --color-yellow-50: hsl(49, 80%, 96%);
+  --color-yellow-100: hsl(49, 75%, 89%);
+  --color-yellow-200: hsl(49, 77%, 71%);
+  --color-yellow-300: hsl(47, 77%, 65%);
+  --color-yellow-400: hsl(44, 77%, 56%);
+  --color-yellow-500: hsl(38, 73%, 50%);
+  --color-yellow-600: hsl(32, 76%, 44%);
+  --color-yellow-700: hsl(26, 72%, 37%);
+  --color-yellow-800: hsl(23, 66%, 31%);
+  --color-yellow-900: hsl(22, 61%, 26%);
+  --color-yellow-950: hsl(21, 72%, 14%);
+
+  /* Blue Shades */
+  --color-blue-50: hsl(233, 100%, 97%);
+  --color-blue-100: hsl(234, 100%, 94%);
+  --color-blue-200: hsl(235, 93%, 89%);
+  --color-blue-300: hsl(236, 91%, 82%);
+  --color-blue-400: hsl(242, 88%, 74%);
+  --color-blue-500: hsl(246, 81%, 67%);
+  --color-blue-600: hsl(250, 74%, 60%);
+  --color-blue-700: hsl(252, 56%, 51%);
+  --color-blue-800: hsl(251, 54%, 41%);
+  --color-blue-900: hsl(249, 46%, 34%);
+  --color-blue-950: hsl(250, 45%, 20%)
+
+  /* Shadows */
+  --shadow-small: -3px 3px;
+  --shadow-medium: -5px 5px;
+  --shadow-large: -10px 10px;
+
+}
+
+@supports (font-variation-settings: normal) {
+  /* Use variable font if supported */
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1,
+    /* Contextual Alternates */ "dlig" 1, /* Discretionary Ligatures */ "ss07" 1,
+    /* fSquare punctuation */ "ss08" 1, /* Square quotes */ "zero" 1,
+    /* Slashed zero */ "tnum" 1, /* Tabular numbers */ "cv03" 1,
+    /* Open six */ "cv04" 1, /* Open nine */ "cv01" 1,
+    /* Alternate one */ "cv09", /* Flat-top three */ "cv02" 1; /* Open 4 */
+  --astro-code-color-text: #1f1e26;
+  --astro-code-background: #fafafa;
+  --astro-code-token-constant: #605d75;
+  --astro-code-token-string: var(--color-green-500);
+  --astro-code-token-comment: #4b485b;
+  --astro-code-token-keyword: var(--color-pink-500);
+  --astro-code-token-parameter: #f1f1f4;
+  --astro-code-token-function: var(--color-blue-600);
+  --astro-code-token-string-expression: var(--color-yellow-400);
+  --astro-code-token-punctuation: var(--color-pink-300);
+  --astro-code-token-link: var(--color-green-500);
+}
+
+
+
+/* Animations */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes scroller {
+  0% {
+    transform: translateY(10em);
+  }
+  100% {
+    transform: translateY(-14em);
+  }
+}
+
+@keyframes scroller2 {
+  0% {
+    transform: translateY(10em);
+  }
+  100% {
+    transform: translateY(-14em);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scroller3 {
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes spin-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Animation classes */
+.marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.marquee2 {
+  animation: marquee2 25s linear infinite;
+}
+
+.scroller3 {
+  animation: scroller3 25s linear infinite;
+}
+
+.spin-slow {
+  animation: spin 4s linear infinite;
+}
+
+.spin-slower {
+  animation: spin 6s linear infinite;
+}
+
+.spin-reverse {
+  animation: spin-reverse 1s linear infinite;
+}
+
+.spin-reverse-slow {
+  animation: spin-reverse 4s linear infinite;
+}
+
+.spin-reverse-slower {
+  animation: spin-reverse 6s linear infinite;
+}
+
+.scroller {
+  animation: scroller 15s linear infinite;
+}
+
+.scroller2 {
+  animation: scroller2 20s linear infinite;
+}
+
+.fade-in {
+  animation: fade-in 0.5s linear forwards;
+}

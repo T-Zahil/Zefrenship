@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("events");
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import EventEntries from "@/components/events/EventEntries.astro";
+import SubscribeTwo from "@/components/ctas/SubscribeTwo.astro";
+---
+
+<BaseLayout>
+  <section class="relative overflow-hidden">
+    <div
+      class="relative px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="text-left sm:text-center">
+        <p
+          class="text-4xl font-semibold font-display text-blue-950 sm:text-6xl">
+          Join us at our<span class="lg:block"> upcoming events</span>
+        </p>
+        <p class="mt-4 text-slate-600 text-base max-w-2xl mx-auto">
+          A unique experience in exploring brand & identity design
+        </p>
+      </div>
+      <ul
+        class="flex flex-col mt-12 list-none gap-2"
+        role="list">
+        {
+          allPosts.slice().map((post) => (
+            <EventEntries
+              url={"/events/" + post.slug}
+              title={post.data.title}
+              description={post.data.description}
+              location={post.data.location}
+              meetingDate={post.data.meetingDate}
+            />
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+  <SubscribeTwo />
+</BaseLayout>

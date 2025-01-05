@@ -1,0 +1,55 @@
+---
+const benefits = [
+  { text: "Online Creative Classes" },
+  { text: "Skill Expansion" },
+  { text: "Hands-On Learning" },
+  { text: "Flexible Learning" },
+  { text: "Personalized Experience" },
+  { text: "Discover New Talents" },
+  { text: "Curated Curriculum" },
+  { text: "Interactive Assignments" },
+  { text: "Creative Community" },
+];
+---
+
+<section class="relative overflow-hidden">
+  <div
+    class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-12 items-center lg:flex">
+    <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
+      <p class="text-4xl font-semibold font-display text-blue-950">
+        Exploring the reasons to choose Enlightr for your learning journey
+      </p>
+      <p class="text-slate-500 mt-4 max-w-sm text-base">
+        Are you in search of an avenue to broaden your skill set and delve into
+        the realms of your creative potential? Look no further.
+      </p>
+      <ul
+        class="list-none text-slate-500 space-y-2 mt-10 text-sm grid grid-cols-1 md:grid-cols-2">
+        {
+          benefits.map((benefit) => (
+            <li class="inline-flex items-center gap-2">
+              <span class="text-green-500">⏤</span> {benefit.text}
+            </li>
+          ))
+        }
+      </ul>
+      <p class="text-slate-500 mt-10 max-w-sm text-base">
+        Our immersive creative courses offer you a hands-on experience that not
+        only facilitates learning at a pace that suits you but also unveils the
+        treasures of untapped talents waiting to be discovered.
+      </p>
+    </div>
+    <div
+      class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none">
+      <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
+        <img
+          src="/dashboard.svg"
+          alt="#"
+          width="2432"
+          height="1442"
+          class="w-[76rem] rounded-3xl bg-slate-100 overflow-hidden"
+        />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,93 @@
+---
+const pricingOptions = [
+
+  {
+    plan: "Pro",
+    price: "$99",
+    description: "For medium-sized businesses",
+    features: [
+      "Full Access to Course Content",
+      "Certificate upon Completion",
+      "Lifetime Access to Materials",
+      "Email Support",
+    ],
+    bgColor: "bg-green-100",
+    textColor: "text-green-950",
+    buttonBgColor: "bg-green-500",
+    buttonText: "Get started",
+    buttonTextColor: "text-white",
+    buttonHoverBgColor: "bg-green-600",
+  }
+];
+
+const benefits = [
+  { text: "Online Creative Classes" },
+  { text: "Skill Expansion" },
+  { text: "Hands-On Learning" },
+  { text: "Flexible Learning" },
+  { text: "Personalized Experience" },
+  { text: "Discover New Talents" },
+  { text: "Curated Curriculum" },
+  { text: "Interactive Assignments" },
+  { text: "Creative Community" },
+];
+
+---
+
+<section>
+  <div class="relative px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+    <div class="grid items-start grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+      <div>
+        <h1
+          class="text-4xl font-semibold font-display text-blue-950 sm:text-4xl">
+          Gain clarity in pricing with transparent and predictable costs
+        </h1>
+        <p class="mt-8 text-slate-500">
+          Find the optimal plan tailored to you and your team. Begin with a
+          modest approach, scale up as your requirements grow.
+        </p>
+        <ul
+        class="list-none text-slate-500 space-y-2 mt-10 text-sm grid grid-cols-1 md:grid-cols-2">
+        {
+          benefits.map((benefit) => (
+            <li class="inline-flex items-center gap-2">
+              <span class="text-green-500">⏤</span> {benefit.text}
+            </li>
+          ))
+        }
+      </ul>
+        <p class="mt-8 text-slate-500">
+          Selecting a suitable plan that aligns with your specific needs and
+          those of your team becomes an effortless task. Begin with a smaller
+          plan to suit your initial requirements, with the flexibility to
+          seamlessly upgrade as your demands evolve and your goals expand.
+        </p>
+      </div>
+     {pricingOptions.map((option) => (
+    <div class={`h-full p-8 ${option.bgColor} rounded-3xl`}>
+      <div class={`flex flex-col w-full gap-8 text-3xl ${option.textColor} font-display`}>
+        <span class="text-2xl lg:text-9xl order-last">{option.price}</span>
+        <span>{option.plan}</span>
+      </div>
+      <p class="mt-8 text-xl font-display ${option.textColor}">{option.description}</p>
+      <ul role="list" class={`flex flex-col order-last mt-8 text-sm ${option.textColor} gap-y-3`}>
+        {option.features.map((feature) => (
+          <li class="flex items-center gap-3">
+            <!-- SVG icon can be replaced with a dynamic import if needed -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+              <path d="M9 12l2 2l4 -4"></path>
+            </svg>
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+      <div class="mt-8">
+        <a class={`items-center inline-flex w-full focus:outline-disc ${option.buttonBgColor} duration-200 focus:ring-2 focus:ring-green-60 focus:ring-offset-2 font-medium h-12 hover:${option.buttonHoverBgColor} gap-3 justify-center px-6 py-1 rounded-full ${option.buttonTextColor} text-center text-sm`} aria-label={option.plan + " tier"} href="/register">{option.buttonText}</a>
+      </div>
+    </div>
+  ))}
+    </div>
+  </div>
+</section>

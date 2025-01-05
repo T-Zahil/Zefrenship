@@ -1,0 +1,79 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import EntriesOne from "@/components/blog/EntriesOne.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+  ];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout pageTitle={tag}>
+  <section>
+    <div
+      class="relative px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="bg-pink-100 p-8 lg:p-20 text-center rounded-3xl">
+        <div>
+          <h1
+            class="text-3xl font-semibold font-display text-blue-950 lg:text-7xl">
+            Blog posts tagged with {tag}
+          </h1>
+          <p class="max-w-xl mt-4 text-slate-500 mx-auto">
+            Discover a boundless realm of knowledge and personal growth, all
+            conclaiently accessible right at your fingertips
+          </p>
+          <form
+            class="max-w-md mx-auto lg:mx-auto mt-12 just bg-white rounded-3xl lg:rounded-full p-4">
+            <div class="flex flex-col lg:flex-row gap-2">
+              <label class="sr-only" for="email-address">Email address</label>
+              <input
+                autocomplete="email"
+                class="block w-full px-4 py-2 h-10 border bg-chalk border-transparent bg-transparent appearance-none text-accent-500 placeholder-pink-500 focus:border-slate-300 focus:outline-none rounded-full focus:ring-slate-300 duration-200 sm:text-sm"
+                id="email-address"
+                name="email"
+                placeholder="Enter your email"
+                required=""
+                type="email"
+              />
+              <button
+                class="items-center inline-flex w-full focus:outline-disc bg-pink-500 duration-500 focus:ring-2 focus:ring-pink-600 focus:ring-offset-2 font-medium lg:w-auto h-10 hover:bg-pink-600 justify-center px-6 py-1 rounded-full text-white text-center text-sm"
+                type="submit">Subscribe</button
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+      <ul class="grid grid-cols-1 mt-12 list-none gap-x-2 gap-y-24 lg:mt-24">
+        {
+          posts.map((post) => (
+            <EntriesOne
+              url={"/posts/" + post.slug}
+              title={post.data.title}
+              description={post.data.description}
+              alt={post.data.title}
+              pubDate={post.data.pubDate.toString().slice(0, 10)}
+              author={post.data.author}
+              image={post.data.image.url}
+            />
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

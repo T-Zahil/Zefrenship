@@ -1,0 +1,54 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+
+---
+
+
+<BaseLayout>
+  <section>
+    <div
+      class="relative px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="bg-green-100 p-8 lg:p-20 text-center rounded-3xl">
+        <div class="flex flex-col lg:flex-row justify-between w-full gap-12">
+          <div>
+            <div class="sm:inline-flex space-x-1 w-full justify-center">
+              <p
+                class="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 gap-3">
+                Written by: {frontmatter.author}
+                <span aria-hidden="true">·</span>
+                <time datetime={frontmatter.pubDate}
+                  >{frontmatter.pubDate.toString().slice(0, 10)}</time
+                >
+              </p>
+            </div>
+            <p
+              class="text-3xl mt-12 font-semibold font-display text-blue-950 lg:text-8xl text-balance">
+              {frontmatter.title}
+            </p>
+
+            <p class="text-sm mt-2 text-slate-500 max-w-xl mx-auto text-balance">
+              <em>{frontmatter.description}</em>
+            </p>
+
+            <ul class="flex flex-wrap gap-2 mt-4 justify-center" role="list">
+              {
+                frontmatter.tags.map((tag) => (
+                  <a href={`/tags/${tag}`}>
+                    <li class=" inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700">
+                      {tag}
+                    </li>
+                  </a>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="prose-styles max-w-2xl mx-auto mt-12">
+        <slot />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

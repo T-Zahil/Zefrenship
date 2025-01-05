@@ -1,0 +1,97 @@
+---
+const features = [
+  {
+    title: "Learn at your own pace with hands-on creative classes.",
+    description:
+      "Our hands-on creative classes are the perfect way to learn at your own pace and discover new talents.",
+    icon: "route",
+  },
+  {
+    title: "Enlightr teachers are creatives and professionals.",
+    description:
+      "At Enlightr, we believe that everyone has something to teach and share with the world.",
+    icon: "school",
+  },
+  // Add more features as needed
+];
+---
+
+<section>
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+    <div class="lg:col-span-2 mx-auto max-w-2xl lg:text-center">
+      <p class="text-4xl font-semibold font-display text-blue-950 text-balance">
+        New Skills with Enlightr. A Detailed Look at Our Curriculum
+      </p>
+      <p class="text-slate-600 mt-4 w-1/2 mx-auto text-balance">
+        With real world projects to create and online classes that fit a busy
+        routine
+      </p>
+    </div>
+    <ul
+      class="grid grid-cols-1 mt-12 list-none md:grid-cols-2 gap-2 text-center"
+      role="list">
+      {
+        features.map((feature) => (
+          <>
+            <li>
+              <div class="p-8 rounded-3xl lg:p-10 bg-blue-50 h-full">
+                <div class="rounded-full bg-white h-10 w-10 items-center inline-flex text-blue-500 mx-auto justify-center">
+                  {feature.icon === "route" && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-route"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path
+                        stroke="none"
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                      <path d="M18 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                      <path d="M12 19h4.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h3.5" />
+                    </svg>
+                  )}
+                  {feature.icon === "school" && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-school"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path
+                        stroke="none"
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                      <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+                    </svg>
+                  )}
+                </div>
+                <p class="text-lg mt-12 font-display text-blue-900 lg:text-3xl">
+                  {feature.title}
+                </p>
+                <p class="mt-2 text-base text-slate-600">
+                  {feature.description}
+                </p>
+              </div>
+            </li>
+          </>
+        ))
+      }
+     
+    </ul>
+  </div>
+</section>

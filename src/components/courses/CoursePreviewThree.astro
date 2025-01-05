@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("courses");
+import EntriesFour from "./EntriesFour.astro";
+---
+
+<section
+  class="grid grid-cols-1 lg:grid-cols-2 overflow-hidden 2xl:overflow-visible 2xl:max-w-7xl mx-auto">
+  <div>
+    <div class="lg:px-48 md:px-12 px-8 py-12 lg:py-24 2xl:px-32">
+      <p class="text-4xl font-semibold font-display text-blue-950">
+        Explore our most <span class="lg:block">popular courses</span>
+      </p>
+      <p class="text-slate-500 mt-4 max-w-sm">
+        Dive into courses loved by learners worldwide
+      </p>
+      <div class="mt-12 flex flex-col lg:flex-row lg:items-center w-full">
+        <div class="relative flex flex-col gap-2 lg:flex-row">
+          <a
+            href="/courses/all-courses-three"
+            class="items-center inline-flex w-full focus:outline-disc bg-green-500 duration-500 focus:ring-2 focus:ring-green-600 focus:ring-offset-2 font-medium lg:w-auto h-12 hover:bg-green-600 justify-center px-6 py-1 gap-3 rounded-full text-white text-center text-sm"
+            >See all courses <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-circle-chevron-right"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="1.25"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                stroke="none"
+                d="M0 0h24v24H0z"
+                fill="none"
+              ></path>
+              <path d="M11 9l3 3l-3 3"></path>
+              <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0z"></path>
+            </svg></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul
+    class="flex flex-wrap mx-auto md:flex-nowrap gap-2 lg:gap-0 p-12 lg:-ml-12">
+    {
+      allPosts.slice(0, 3).map((post) => (
+        <EntriesFour
+          url={"/courses/" + post.slug}
+          courseTtitle={post.data.courseTitle}
+          intro={post.data.intro}
+          price={post.data.price}
+          avatar={post.data.avatar.url}
+        />
+      ))
+    }
+  </ul>
+</section>

@@ -1,0 +1,111 @@
+---
+const learningFeatures = [
+  {
+    title: "Expert Instructors",
+    description:
+      "Learn from expert instructors who bring years of industry experience and knowledge to guide you on your learning journey.",
+  },
+  {
+    title: "Collaborative Learning",
+    description:
+      "Engage in a vibrant community of learners, where you can exchange ideas, share insights, and collaborate on projects to enhance your understanding.",
+  },
+  {
+    title: "Innovative Curriculum",
+    description:
+      "Immerse yourself in a thoughtfully designed curriculum that goes beyond traditional approaches, integrating cutting-edge methodologies and current industry trends.",
+  },
+  {
+    title: "Interdisciplinary Insights",
+    description:
+      "Gain insights from instructors with diverse backgrounds, offering a multidisciplinary perspective that enriches your understanding of the subject.",
+  },
+  {
+    title: "Personalized Feedback",
+    description:
+      "Receive personalized feedback from instructors who understand your unique strengths and areas for improvement, helping you refine your skills.",
+  },
+  // Note: There's a repeated title here; ensure titles and descriptions are unique or adjust as necessary.
+  {
+    title: "Networking Opportunities",
+    description:
+      "Connect with peers, mentors, and industry professionals, expanding your network and opening doors to potential opportunities.",
+  },
+  {
+    title: "Project-Based Learning",
+    description:
+      "Work on real-world projects that challenge you to apply theoretical concepts to practical scenarios, deepening your grasp of the subject matter.",
+  },
+  {
+    title: "Hands-On Workshops",
+    description:
+      "Participate in hands-on workshops that simulate real industry scenarios, preparing you for the challenges you might face in your creative pursuits.",
+  },
+  {
+    title: "Guest Speakers",
+    description:
+      "Benefit from the wisdom of guest speakers, who bring fresh perspectives and insights from their own successful careers to inspire and educate.",
+  },
+  {
+    title: "Creative Exploration",
+    description:
+      "Explore techniques to nurture and stimulate your creativity, breaking through creative blocks and fostering a constant flow of innovative ideas.",
+  },
+];
+---
+
+<section>
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+    <div class="max-w-3xl mx-auto">
+      <div>
+        <p
+          class="text-4xl font-semibold font-display text-blue-950 lg:text-8xl">
+          Why learning from Enlightr
+        </p>
+        <p class="text-slate-500 mt-4 max-w-xl">
+          Looking to expand your skills and explore your creativity? Our
+          hands-on creative classes are the perfect way to learn at your own
+          pace and discover new talents.
+        </p>
+        <div class="max-w-3xl mx-auto mt-12">
+          <ul
+            class="prose-styles list-disc grid grid-cols-1 lg:grid-cols-2 gap-x-12">
+            {
+              learningFeatures.map((feature) => (
+                <li>
+                  <strong class="font-display">{feature.title}</strong>
+                  {feature.description}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12">
+        <a
+          href="/courses/all-courses-three"
+          class="items-center inline-flex w-full focus:outline-disc bg-green-500 duration-500 focus:ring-2 focus:ring-green-600 focus:ring-offset-2 font-medium lg:w-auto h-12 hover:bg-green-600 justify-center px-6 py-1 rounded-full text-white text-center text-sm gap-3"
+          >See all our courses <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-circle-chevron-right"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.25"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              stroke="none"
+              d="M0 0h24v24H0z"
+              fill="none"
+            ></path>
+            <path d="M11 9l3 3l-3 3"></path>
+            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0z"></path>
+          </svg></a
+        >
+      </div>
+    </div>
+  </div>
+</section>
