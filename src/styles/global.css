@@ -52,7 +52,17 @@
   --font-mono: "Azaret Mono", monospace;
   /* Colors */
   /* Primary */
+  --color-primary-50: #f5f9fe;
+  --color-primary-100: #eaf2fc;
+  --color-primary-200: #d5e5f9;
+  --color-primary-300: #aecbf2;
+  --color-primary-400: #89b1e8;
   --color-primary-500: #689bdf;
+  --color-primary-600: #4d7ec2;
+  --color-primary-700: #3d65a5;
+  --color-primary-800: #325187;
+  --color-primary-900: #2b446f;
+  --color-primary-950: #1c2c4a;
   /* Green Shades */
   --color-green-50: hsl(120, 29%, 97%);
   --color-green-100: hsl(120, 32%, 93%);
